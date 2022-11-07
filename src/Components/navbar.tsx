@@ -53,7 +53,7 @@ export default function NavBar() {
             onClick={isOpen ? onClose : onOpen}
           />
 
-          {/* BUTTON NAVBAR DASHBOARD DLL
+          {/* BUTTON NAVBAR DASHBOARD DLL */}
           <HStack spacing={8} alignItems={"center"}>
             <Box>Expert System</Box>
             <HStack
@@ -65,7 +65,7 @@ export default function NavBar() {
                 <NavLink key={link}>{link}</NavLink>
               ))}
             </HStack>
-          </HStack> */}
+          </HStack>
 
           {/* DARK MODE SWITCHER */}
           <Flex alignItems={"center"}>
