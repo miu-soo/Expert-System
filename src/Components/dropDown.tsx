@@ -32,13 +32,18 @@ export default function DropDown() {
             rel="stylesheet"
           />
         </head>
-        <Box fontSize={100} fontFamily={"Bebas Neue"}>
+        <Box fontSize={100} fontFamily={"Bebas Neue"} height={"120px"}>
           Gejala
         </Box>
-        <Flex width={"900px"}>
+        <Box fontSize={20} fontFamily={"Bebas Neue"} marginBottom={"30px"}>
+          Silahkan pilih gejala yang selama ini anda alami.
+        </Box>
+        <Flex width={[360, 400, 900]}>
           <Stack spacing={5} alignContent={"start"}>
             {gejala.map((link: any) => (
-              <Checkbox key={link}>{link}</Checkbox>
+              <Checkbox paddingBottom={"2px"} key={link}>
+                {link}
+              </Checkbox>
             ))}
           </Stack>
         </Flex>
