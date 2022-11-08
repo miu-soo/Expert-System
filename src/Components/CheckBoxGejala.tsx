@@ -5,6 +5,7 @@ import {
   Stack,
   Flex,
   HStack,
+  Button,
 } from "@chakra-ui/react";
 
 export default function CheckBoxGejala() {
@@ -19,6 +20,11 @@ export default function CheckBoxGejala() {
     "Gejala 1",
     "Gejala 1",
   ];
+
+  const selectedGejala = (name: string) => {
+    alert(`hello, ${name}`);
+  };
+
   return (
     <div>
       <Flex
@@ -47,6 +53,7 @@ export default function CheckBoxGejala() {
             ))}
           </Stack>
         </Flex>
+        <Button onClick={() => selectedGejala("James")}>Next</Button>
       </Flex>
     </div>
   );
