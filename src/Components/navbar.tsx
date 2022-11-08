@@ -35,7 +35,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   </Link>
 );
 
-const Links = ["Dashboard", "Projects", "Team"];
+const Links = ["Dashboard", "Project", "Team"];
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -55,7 +55,9 @@ export default function NavBar() {
 
           {/* BUTTON NAVBAR DASHBOARD DLL */}
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Expert System</Box>
+            <Box as="b" fontSize={"17px"}>
+              E.S. Gejala Penyakit Jantung
+            </Box>
             <HStack
               as={"nav"}
               spacing={4}
@@ -109,6 +111,17 @@ export default function NavBar() {
             </Stack>
           </Flex>
         </Flex>
+
+        {/* HAMBURGER BUTTON NAVBAR */}
+        {isOpen ? (
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
       </Box>
     </>
   );
