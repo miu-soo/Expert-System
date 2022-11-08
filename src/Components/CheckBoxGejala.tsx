@@ -7,22 +7,49 @@ import {
   HStack,
   Button,
 } from "@chakra-ui/react";
+import { useState } from "react"
 
 export default function CheckBoxGejala() {
+
   const gejala = [
     "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
+    "Gejala 2",
+    "Gejala 3",
+    "Gejala 4",
+    "Gejala 5",
+    "Gejala 6",
+    "Gejala 7",
+    "Gejala 8",
+    "Gejala 9",
   ];
 
-  const selectedGejala = (name: string) => {
-    alert(`hello, ${name}`);
+  const [checkedState, setCheckedState] = useState(
+    new Array(gejala.length).fill(false)
+  );
+
+  let g = [""];
+
+  const [gejalas, setGejalas] = useState(g);
+
+  const handleOnChange = (position: number) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+
+    g = [];
+
+    updatedCheckedState.forEach((x, i) => {
+      if (x === true) g.push(gejala[i]);
+    })
+
+    setGejalas(g);
+  };
+
+  const selectedGejala = () => {
+    console.log(gejalas);
+    alert(`Gejala: ${gejalas}`);
   };
 
   return (
@@ -46,14 +73,14 @@ export default function CheckBoxGejala() {
         </Box>
         <Flex width={[360, 400, 900]}>
           <Stack spacing={5} alignContent={"start"}>
-            {gejala.map((link: any) => (
-              <Checkbox paddingBottom={"2px"} key={link}>
-                {link}
+            {gejala.map((link: any, index) => (
+              <Checkbox paddingBottom={"2px"} key={link} onChange={() => handleOnChange(index)}>
+                {link} 
               </Checkbox>
             ))}
           </Stack>
         </Flex>
-        <Button onClick={() => selectedGejala("James")}>Next</Button>
+        <Button onClick={() => selectedGejala()}>Next</Button>
       </Flex>
     </div>
   );
