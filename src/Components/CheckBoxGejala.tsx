@@ -7,7 +7,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 
-export default function DropDown() {
+export default function CheckBoxGejala() {
   const gejala = [
     "Gejala 1",
     "Gejala 1",
@@ -33,7 +33,7 @@ export default function DropDown() {
           />
         </head>
         <Box fontSize={100} fontFamily={"Bebas Neue"} height={"120px"}>
-          Gejala
+          List Gejala
         </Box>
         <Box fontSize={20} fontFamily={"Bebas Neue"} marginBottom={"30px"}>
           Silahkan pilih gejala yang selama ini anda alami.
