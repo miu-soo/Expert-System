@@ -55,7 +55,9 @@ export default function NavBar() {
 
           {/* BUTTON NAVBAR DASHBOARD DLL */}
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Expert System Gejala Penyakit Jantung</Box>
+            <Box as="b" fontSize={"17px"}>
+              E.S. Gejala Penyakit Jantung
+            </Box>
             <HStack
               as={"nav"}
               spacing={4}
