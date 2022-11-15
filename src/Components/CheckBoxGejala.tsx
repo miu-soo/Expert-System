@@ -8,20 +8,11 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useState } from "react"
+import Gejala from "../data/dataGejala"
 
 export default function CheckBoxGejala() {
 
-  const gejala = [
-    "Gejala 1",
-    "Gejala 2",
-    "Gejala 3",
-    "Gejala 4",
-    "Gejala 5",
-    "Gejala 6",
-    "Gejala 7",
-    "Gejala 8",
-    "Gejala 9",
-  ];
+  const gejala = Gejala;
 
   const [checkedState, setCheckedState] = useState(
     new Array(gejala.length).fill(false)
@@ -41,7 +32,7 @@ export default function CheckBoxGejala() {
     g = [];
 
     updatedCheckedState.forEach((x, i) => {
-      if (x === true) g.push(gejala[i]);
+      if (x === true) g.push(gejala[i].name);
     })
 
     setGejalas(g);
@@ -73,9 +64,9 @@ export default function CheckBoxGejala() {
         </Box>
         <Flex width={[360, 400, 900]}>
           <Stack spacing={5} alignContent={"start"}>
-            {gejala.map((link: any, index) => (
-              <Checkbox paddingBottom={"2px"} key={link} onChange={() => handleOnChange(index)}>
-                {link} 
+            {gejala.map((g: any, index) => (
+              <Checkbox paddingBottom={"2px"} key={g.value} onChange={() => handleOnChange(index)}>
+                {g.name} 
               </Checkbox>
             ))}
           </Stack>
