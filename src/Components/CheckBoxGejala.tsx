@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react"
 import Gejala from "../data/dataGejala"
+import Hasil from "./Hasil";
 
 export default function CheckBoxGejala() {
 
@@ -71,7 +72,10 @@ export default function CheckBoxGejala() {
             ))}
           </Stack>
         </Flex>
-        <Button onClick={() => selectedGejala()}>Next</Button>
+        <Button onClick={() => selectedGejala()}>Result</Button>
+        <div id="hasil">
+          <Hasil gejalaInput={gejalas}/>
+        </div>
       </Flex>
     </div>
   );
