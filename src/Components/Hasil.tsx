@@ -1,3 +1,4 @@
+import { Flex, VStack } from "@chakra-ui/react";
 import React from "react";
 import Penyakit from "../data/dataPenyakit";
 // export default function Hasil() {
@@ -6,8 +7,7 @@ import Penyakit from "../data/dataPenyakit";
 
 const Hasil: React.FC<{
   gejalaInput: Array<string>;
-}> = props => {
-
+}> = (props) => {
   let dataGejala = props.gejalaInput;
   let dataPenyakit = Penyakit;
 
@@ -19,16 +19,17 @@ const Hasil: React.FC<{
 
   return (
     <>
+      <br />
       Selected: {dataGejala.join(", ")}
-      <br/>
+      <br />
       Penyakit: {penyakit?.name}
-      <br/>
+      <br />
       Deskripsi: {penyakit?.description}
       <br />
       Detail: {penyakit?.detail}
       <br />
     </>
-  )
-}
+  );
+};
 
 export default Hasil;

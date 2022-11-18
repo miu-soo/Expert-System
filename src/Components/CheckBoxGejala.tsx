@@ -6,13 +6,13 @@ import {
   Flex,
   HStack,
   Button,
+  VStack,
 } from "@chakra-ui/react";
-import { useState } from "react"
-import Gejala from "../data/dataGejala"
+import { useState } from "react";
+import Gejala from "../data/dataGejala";
 import Hasil from "./Hasil";
 
 export default function CheckBoxGejala() {
-
   const gejala = Gejala;
 
   const [checkedState, setCheckedState] = useState(
@@ -34,7 +34,7 @@ export default function CheckBoxGejala() {
 
     updatedCheckedState.forEach((x, i) => {
       if (x === true) g.push(gejala[i].name);
-    })
+    });
 
     setGejalas(g);
   };
@@ -66,16 +66,22 @@ export default function CheckBoxGejala() {
         <Flex width={[360, 400, 900]}>
           <Stack spacing={5} alignContent={"start"}>
             {gejala.map((g: any, index) => (
-              <Checkbox paddingBottom={"2px"} key={g.value} onChange={() => handleOnChange(index)}>
-                {g.name} 
+              <Checkbox
+                paddingBottom={"2px"}
+                key={g.value}
+                onChange={() => handleOnChange(index)}
+              >
+                {g.name}
               </Checkbox>
             ))}
           </Stack>
         </Flex>
         <Button onClick={() => selectedGejala()}>Result</Button>
-        <div id="hasil">
-          <Hasil gejalaInput={gejalas}/>
-        </div>
+      </Flex>
+      <Flex justifyContent={"center"}>
+        <VStack spacing={5} id="hasil">
+          <Hasil gejalaInput={gejalas} />
+        </VStack>
       </Flex>
     </div>
   );
