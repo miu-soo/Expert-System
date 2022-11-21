@@ -6,23 +6,48 @@ import {
   Flex,
   HStack,
   Button,
+  VStack,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import Gejala from "../data/dataGejala";
+import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
+import Hasil from "./Hasil";
 
 export default function CheckBoxGejala() {
-  const gejala = [
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-    "Gejala 1",
-  ];
+  const gejala = Gejala;
 
-  const selectedGejala = (name: string) => {
-    alert(`hello, ${name}`);
+  const [checkedState, setCheckedState] = useState(
+    new Array(gejala.length).fill(false)
+  );
+
+  let g = [""];
+
+  const [gejalas, setGejalas] = useState(g);
+
+  const handleOnChange = (position: number) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+
+    g = [];
+
+    updatedCheckedState.forEach((x, i) => {
+      if (x === true) {
+        g.push(gejala[i].name);
+        gejala[i].value = true;
+      } else {
+        gejala[i].value = false;
+      }
+    });
+
+    setGejalas(g);
+  };
+
+  const selectedGejala = () => {
+    console.log(gejalas);
+    alert(`Gejala: ${gejalas}`);
   };
 
   return (
@@ -46,14 +71,23 @@ export default function CheckBoxGejala() {
         </Box>
         <Flex width={[360, 400, 900]}>
           <Stack spacing={5} alignContent={"start"}>
-            {gejala.map((link: any) => (
-              <Checkbox paddingBottom={"2px"} key={link}>
-                {link}
+            {gejala.map((g: any, index) => (
+              <Checkbox
+                paddingBottom={"2px"}
+                key={g.id}
+                onChange={() => handleOnChange(index)}
+              >
+                {g.name}
               </Checkbox>
             ))}
           </Stack>
         </Flex>
-        <Button onClick={() => selectedGejala("James")}>Next</Button>
+        <Box fontSize={40} fontFamily={"Bebas Neue"} marginTop={"30px"}>
+          Persentase Probabilitas Penyakit
+        </Box>
+      </Flex>
+      <Flex justifyContent={"center"}>
+        <Hasil gejalaInput={gejalas} />
       </Flex>
     </div>
   );
