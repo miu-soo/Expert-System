@@ -38,7 +38,7 @@ const Penyakit = [
     name: "Gagal Jantung",
     description:
       "A chronic condition in which the heart doesn't pump blood as well as it should.",
-    diseases: [2, 4, 8, 9, 12, 17, 20, 23, 28, 31],
+    diseases: [2, 4, 8, 9, 12, 17, 20, 23, 24, 28, 31],
     value: 0,
     detail: "Detail penyakit 1",
   },
