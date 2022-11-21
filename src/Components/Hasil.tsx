@@ -15,7 +15,7 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import Penyakit from "../data/dataPenyakit";
 import Gejala from "../data/dataGejala";
 // export default function Hasil() {
@@ -25,7 +25,7 @@ import Gejala from "../data/dataGejala";
 const Hasil: React.FC<{
   gejalaInput: Array<string>;
 }> = (props) => {
-  // let gejalaInput = props.gejalaInput;
+  let gejalaInput = props.gejalaInput;
   let dataGejala = Gejala;
   let dataPenyakit = Penyakit;
 
@@ -43,8 +43,19 @@ const Hasil: React.FC<{
     }
   });
 
-  console.log(dataPenyakit);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // console.log(dataPenyakit);
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalData, setModalData] = useState<{
+    id: number; 
+    name: string; 
+    description: string; 
+    diseases: number[]; 
+    value: number; 
+    detail: string
+  }>();
+
   return (
     <Flex flexDir={"column"}>
       <HStack
@@ -75,22 +86,31 @@ const Hasil: React.FC<{
                 %
               </CircularProgressLabel>
             </CircularProgress>
-            <Button onClick={onOpen}>Info</Button>
-            <Modal isOpen={isOpen} onClose={onClose}>
-              <ModalOverlay />
-              <ModalContent>
-                <ModalHeader>{penyakit.name}</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>{penyakit.description}</ModalBody>
-                <ModalFooter>
-                  <Button colorScheme="blue" mr={3} onClick={onClose}>
-                    Close
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
+            <Button onClick={
+              () => {
+                setModalData(penyakit);
+                setModalIsOpen(true);
+              }
+            }>
+              Info
+            </Button>
           </VStack>
         ))}
+        {modalIsOpen && (
+          <Modal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>{modalData!.name}</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>{modalData!.description}</ModalBody>
+              <ModalFooter>
+                <Button colorScheme="blue" mr={3} onClick={() => setModalIsOpen(false)}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+        )}
       </HStack>
       {/* <HStack
         justifyContent={"center"}
