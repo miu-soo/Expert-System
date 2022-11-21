@@ -34,7 +34,12 @@ export default function CheckBoxGejala() {
     g = [];
 
     updatedCheckedState.forEach((x, i) => {
-      if (x === true) g.push(gejala[i].name);
+      if (x === true) {
+        g.push(gejala[i].name);
+        gejala[i].value = true;
+      } else {
+        gejala[i].value = false;
+      }
     });
 
     setGejalas(g);
@@ -69,7 +74,7 @@ export default function CheckBoxGejala() {
             {gejala.map((g: any, index) => (
               <Checkbox
                 paddingBottom={"2px"}
-                key={g.value}
+                key={g.id}
                 onChange={() => handleOnChange(index)}
               >
                 {g.name}
@@ -80,24 +85,7 @@ export default function CheckBoxGejala() {
         <Button onClick={() => selectedGejala}>Result</Button>
       </Flex>
       <Flex justifyContent={"center"}>
-        <HStack marginTop={"20px"}>
-          <VStack spacing={5} marginLeft={"15px"} marginRight={"15px"}>
-            <Box fontSize={20} fontFamily={"Bebas Neue"}>
-              Jantung Koroner
-            </Box>
-            <CircularProgress value={40} size="120px">
-              <CircularProgressLabel>40%</CircularProgressLabel>
-            </CircularProgress>
-          </VStack>
-          <VStack spacing={5} marginLeft={"15px"} marginRight={"15px"}>
-            <Box fontSize={20} fontFamily={"Bebas Neue"}>
-              Penyakit jantung keturunan
-            </Box>
-            <CircularProgress value={90} size="120px">
-              <CircularProgressLabel>40%</CircularProgressLabel>
-            </CircularProgress>
-          </VStack>
-        </HStack>
+        <Hasil gejalaInput={gejalas}/>
       </Flex>
     </div>
   );
