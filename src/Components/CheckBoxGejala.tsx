@@ -83,7 +83,7 @@ export default function CheckBoxGejala() {
           </Stack>
         </Flex>
         <Box fontSize={40} fontFamily={"Bebas Neue"} marginTop={"30px"}>
-          Persentase Probabilita Penyakit
+          Persentase Probabilitas Penyakit
         </Box>
       </Flex>
       <Flex justifyContent={"center"}>
