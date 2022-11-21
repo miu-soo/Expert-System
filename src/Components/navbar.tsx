@@ -29,13 +29,13 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
+    href={"/Team"}
   >
     {children}
   </Link>
 );
 
-const Links = ["Dashboard", "Project", "Team"];
+const Links = ["Home", "Team"];
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -99,13 +99,11 @@ export default function NavBar() {
                   </Center>
                   <br />
                   <Center>
-                    <p>Username</p>
+                    <p>miu</p>
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem>About</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
@@ -113,7 +111,7 @@ export default function NavBar() {
         </Flex>
 
         {/* HAMBURGER BUTTON NAVBAR */}
-        {isOpen ? (
+        {/* {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
@@ -121,7 +119,7 @@ export default function NavBar() {
               ))}
             </Stack>
           </Box>
-        ) : null}
+        ) : null} */}
       </Box>
     </>
   );

@@ -48,12 +48,12 @@ const Hasil: React.FC<{
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalData, setModalData] = useState<{
-    id: number; 
-    name: string; 
-    description: string; 
-    diseases: number[]; 
-    value: number; 
-    detail: string
+    id: number;
+    name: string;
+    description: string;
+    diseases: number[];
+    value: number;
+    detail: string;
   }>();
 
   return (
@@ -86,12 +86,12 @@ const Hasil: React.FC<{
                 %
               </CircularProgressLabel>
             </CircularProgress>
-            <Button onClick={
-              () => {
+            <Button
+              onClick={() => {
                 setModalData(penyakit);
                 setModalIsOpen(true);
-              }
-            }>
+              }}
+            >
               Info
             </Button>
           </VStack>
@@ -104,7 +104,11 @@ const Hasil: React.FC<{
               <ModalCloseButton />
               <ModalBody>{modalData!.description}</ModalBody>
               <ModalFooter>
-                <Button colorScheme="blue" mr={3} onClick={() => setModalIsOpen(false)}>
+                <Button
+                  colorScheme="blue"
+                  mr={3}
+                  onClick={() => setModalIsOpen(false)}
+                >
                   Close
                 </Button>
               </ModalFooter>
@@ -113,95 +117,6 @@ const Hasil: React.FC<{
         )}
       </HStack>
       <Box marginTop={6}></Box>
-      {/* <HStack
-        justifyContent={"center"}
-        width={"full"}
-        border={"solid"}
-        spacing={260}
-      >
-        <Button onClick={onOpen}>Info</Button>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Jantung Koroner</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              Damage or disease in the heart's major blood vessels.
-            </ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-
-        <Button onClick={onOpen}>Info</Button>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Jantung Koroner</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              Damage or disease in the heart's major blood vessels.
-            </ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-
-        <Button onClick={onOpen}>Info</Button>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Jantung Koroner</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              Damage or disease in the heart's major blood vessels.
-            </ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-        <Button onClick={onOpen}>Info</Button>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Jantung Koroner</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              Damage or disease in the heart's major blood vessels.
-            </ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-        <Button onClick={onOpen}>Info</Button>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Jantung Koroner</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              Damage or disease in the heart's major blood vessels.
-            </ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </HStack> */}
     </Flex>
   );
 };
