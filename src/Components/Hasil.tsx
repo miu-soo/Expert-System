@@ -112,6 +112,7 @@ const Hasil: React.FC<{
           </Modal>
         )}
       </HStack>
+      <Box marginTop={6}></Box>
       {/* <HStack
         justifyContent={"center"}
         width={"full"}

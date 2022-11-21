@@ -116,7 +116,7 @@ const Gejala = [
   },
   {
     id: 24,
-    name: "Ketika tidur menggunakan banyak bantal di are kepala",
+    name: "Ketika tidur menggunakan banyak bantal di area kepala",
     value: false,
   },
   {
