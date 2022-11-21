@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import Gejala from "../data/dataGejala";
+import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
 import Hasil from "./Hasil";
 
 export default function CheckBoxGejala() {
@@ -76,12 +77,27 @@ export default function CheckBoxGejala() {
             ))}
           </Stack>
         </Flex>
-        <Button onClick={() => selectedGejala()}>Result</Button>
+        <Button onClick={() => selectedGejala}>Result</Button>
       </Flex>
       <Flex justifyContent={"center"}>
-        <VStack spacing={5} id="hasil">
-          <Hasil gejalaInput={gejalas} />
-        </VStack>
+        <HStack marginTop={"20px"}>
+          <VStack spacing={5} marginLeft={"15px"} marginRight={"15px"}>
+            <Box fontSize={20} fontFamily={"Bebas Neue"}>
+              Jantung Koroner
+            </Box>
+            <CircularProgress value={40} size="120px">
+              <CircularProgressLabel>40%</CircularProgressLabel>
+            </CircularProgress>
+          </VStack>
+          <VStack spacing={5} marginLeft={"15px"} marginRight={"15px"}>
+            <Box fontSize={20} fontFamily={"Bebas Neue"}>
+              Penyakit jantung keturunan
+            </Box>
+            <CircularProgress value={90} size="120px">
+              <CircularProgressLabel>40%</CircularProgressLabel>
+            </CircularProgress>
+          </VStack>
+        </HStack>
       </Flex>
     </div>
   );

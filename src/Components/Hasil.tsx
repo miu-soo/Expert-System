@@ -19,9 +19,6 @@ const Hasil: React.FC<{
 
   return (
     <>
-      <br />
-      Selected: {dataGejala.join(", ")}
-      <br />
       Penyakit: {penyakit?.name}
       <br />
       Deskripsi: {penyakit?.description}
