@@ -1,7 +1,7 @@
 const Penyakit = [
   {
     id: 1,
-    name: "Penyakit Jantung Koroner",
+    name: "Jantung Koroner",
     description: "Damage or disease in the heart's major blood vessels.",
     diseases: [1, 2, 3, 4, 5, 6, 13, 16, 25, 30],
     value: 0,

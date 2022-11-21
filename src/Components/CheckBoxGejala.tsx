@@ -82,10 +82,12 @@ export default function CheckBoxGejala() {
             ))}
           </Stack>
         </Flex>
-        <Button onClick={() => selectedGejala}>Result</Button>
+        <Box fontSize={40} fontFamily={"Bebas Neue"} marginTop={"30px"}>
+          Persentase Probabilita Penyakit
+        </Box>
       </Flex>
       <Flex justifyContent={"center"}>
-        <Hasil gejalaInput={gejalas}/>
+        <Hasil gejalaInput={gejalas} />
       </Flex>
     </div>
   );

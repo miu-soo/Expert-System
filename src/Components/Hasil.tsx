@@ -41,12 +41,11 @@ const Hasil: React.FC<{
       <HStack
         marginTop={"20px"}
         width={"full"}
-        border={"solid"}
         justifyContent={"center"}
         spacing={"20px"}
       >
         {dataPenyakit.map((penyakit) => (
-          <VStack spacing={5} marginLeft={"15px"} marginRight={"15px"}>
+          <VStack spacing={5} marginLeft={"10px"} marginRight={"10px"}>
             <Box
               fontSize={25}
               fontFamily={"Bebas Neue"}
