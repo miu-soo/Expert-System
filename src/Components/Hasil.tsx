@@ -118,7 +118,7 @@ const Hasil: React.FC<{
                   Close
                 </Button>
                 <a href={modalData!.href} target="_blank" rel="noreferrer">
-                  <Button colorScheme="blue">Halo Doc</Button>
+                  <Button colorScheme="blue">HaloDoc</Button>
                 </a>
               </ModalFooter>
             </ModalContent>
