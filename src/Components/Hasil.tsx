@@ -47,6 +47,7 @@ const Hasil: React.FC<{
   // const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
   const [modalData, setModalData] = useState<{
     id: number;
     name: string;
@@ -54,6 +55,7 @@ const Hasil: React.FC<{
     diseases: number[];
     value: number;
     detail: string;
+    href: string;
   }>();
 
   return (
@@ -97,12 +99,16 @@ const Hasil: React.FC<{
           </VStack>
         ))}
         {modalIsOpen && (
-          <Modal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
+          <Modal
+            isOpen={modalIsOpen}
+            onClose={() => setModalIsOpen(false)}
+            scrollBehavior={"inside"}
+          >
             <ModalOverlay />
             <ModalContent>
               <ModalHeader>{modalData!.name}</ModalHeader>
               <ModalCloseButton />
-              <ModalBody>{modalData!.description}</ModalBody>
+              <ModalBody>Adalah {modalData!.description}</ModalBody>
               <ModalFooter>
                 <Button
                   colorScheme="blue"
@@ -111,6 +117,9 @@ const Hasil: React.FC<{
                 >
                   Close
                 </Button>
+                <a href={modalData!.href} target="_blank" rel="noreferrer">
+                  <Button colorScheme="blue">HaloDoc</Button>
+                </a>
               </ModalFooter>
             </ModalContent>
           </Modal>

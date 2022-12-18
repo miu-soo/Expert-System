@@ -2,10 +2,12 @@ const Penyakit = [
   {
     id: 1,
     name: "Jantung Koroner",
-    description: "Damage or disease in the heart's major blood vessels.",
+    description:
+      "kondisi ketika pembuluh darah jantung tersumbat oleh timbunan lemak. Semakin banyak lemak menumpuk, arteri koroner semakin menyempit dan membuat aliran arah ke jantung berkurang.",
     diseases: [1, 2, 3, 4, 5, 6, 13, 16, 25, 30],
     value: 0,
     detail: "Detail penyakit 1",
+    href: "https://www.halodoc.com/artikel/kenali-gejala-penyakit-jantung-koroner",
   },
   {
     id: 2,
@@ -14,33 +16,37 @@ const Penyakit = [
     diseases: [1, 2, 7, 18, 11, 21, 22, 27, 29, 30],
     value: 0,
     detail: "Detail penyakit 1",
+    href: "https://www.halodoc.com/artikel/meski-ada-faktor-gen-risiko-penyakit-jantung-bisa-diturunkan",
   },
   {
     id: 3,
     name: "Arrhythmia",
     description:
-      "Improper beating of the heart, whether irregular, too fast or too slow.",
+      "gangguan kesehatan yang terjadi pada irama jantung. Penyakit ini menyebabkan detak jantung pengidapnya terasa tidak teratur yang bisa lebih cepat atau lebih lambat.  Kondisi ini bisa terjadi karena impuls elektrik yang berfungsi mengatur detak jantung agar tetap normal, tidak bekerja dengan baik atau mengalami gangguan.",
     diseases: [2, 4, 7, 8, 9, 12, 17, 27, 30],
     value: 0,
     detail: "Detail penyakit 1",
+    href: "https://www.halodoc.com/kesehatan/aritmia",
   },
   {
     id: 4,
     name: "Penyakit katup jantung",
     description:
-      "One or more of the valves in your heart doesn't work properly",
+      "kondisi di mana katup jantung tidak berfungsi secara normal. Berdasarkan data Asosiasi Jantung Amerika, sekitar 5 juta orang Amerika Serikat terdiagnosis dengan penyakit katup jantung setiap tahunnya.",
     diseases: [1, 8, 9, 12, 14, 15, 19, 20, 26, 28, 31],
     value: 0,
     detail: "Detail penyakit 1",
+    href: "https://www.halodoc.com/kesehatan/penyakit-katup-jantung",
   },
   {
     id: 5,
     name: "Gagal Jantung",
     description:
-      "A chronic condition in which the heart doesn't pump blood as well as it should.",
+      "merupakan kondisi saat otot jantung cukup melemah. Akibat dari kondisi ini, organ ini tidak mampu lagi memompa cukup darah ke seluruh tubuh pada tekanan yang seharusnya. Meski bisa terjadi pada siapa saja, penyakit ini disebut lebih sering terjadi pada orang yang berusia lanjut. Kondisi ini tidak boleh disepelekan begitu saja dan harus segera mendapatkan penanganan medis.",
     diseases: [2, 4, 8, 9, 12, 17, 20, 23, 24, 28, 31],
     value: 0,
     detail: "Detail penyakit 1",
+    href: "https://www.halodoc.com/kesehatan/gagal-jantung",
   },
 ];
 export default Penyakit;
